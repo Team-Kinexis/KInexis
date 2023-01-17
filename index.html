@@ -2,30 +2,17 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="style.css">
+
     <title>Kinexis</title>
     <style>
         body {
             background-color: #3e503e
         }
 
-        .title_background {
-            height: 100px;
-            background-color: rgb(88, 201, 186);
-            position: relative;
-            margin: 0 auto;
-            max-width: 1000px;
-            max-height: 100px;
-            margin-top: 20px;
-        }
+        
 
-        .background {
-            height: 700px;
-            background-color: white;
-            position: relative;
-            margin: 0 auto;
-            max-width: 1000px;
-            max-height: 900px;
-        }
+        
 
         .title {
             position: relative;
@@ -42,7 +29,7 @@
             justify-content: space-around;
             margin: 0 auto;
             max-width: 300px;
-            padding: 50px 25px  0px;
+            padding: 50px 25px 0px;
         }
 
 
@@ -90,10 +77,57 @@
         .button001 button:hover:after {
             transform: scale(1, 1);
         }
+
+        .gotop {
+            display: block;
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+            background: #FFF;
+            border: 1px solid #999;
+            padding-top: 30px;
+            text-align: center;
+            letter-spacing: -1px;
+            font-size: 85%;
+            text-decoration: none;
+            color: #333;
+            opacity: 0.5;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+        }
+
+        .gotop::before {
+            content: "";
+            display: block;
+            border-top: 2px solid #333;
+            border-right: 2px solid #333;
+            width: 25%;
+            height: 25%;
+            top: 25%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+
+        .gotop:hover {
+            opacity: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
+    <a href="#" class="gotop">Top</a>
+
 </head>
 
 <body>
+
+
 
     <div class="background">
         <div class="title_background">
@@ -101,6 +135,15 @@
                 <h1>Kinexis公式</h1>
             </div>
         </div>
+
+        <div class="visual">
+            <div class="movie">
+                <video src="main.mp4" autoplay muted loop playsinline type="video/mp4"></video>
+            </div>
+        </div>
+
+        </div>
+
         <div class="text">
             <p> ↓↓↓ダウンロードはこちら↓↓↓ </p>
         </div>
@@ -109,6 +152,15 @@
             <button type=“button”
                 onclick="location.href='https://drive.google.com/uc?export=download&id=1HXDn5KbIHYv9CR4PkFqxeUmlbPZnHs9Q'">ダウンロード</button>
         </div>
+    </div>
+
+    <div id="loading-wrapper">
+        <div id="loading-text">LOADING</div>
+        <div id="loading-content"></div>
+    </div>
+
+    <div id="loading">
+        <div class="loader"></div>
     </div>
 
 </body>
