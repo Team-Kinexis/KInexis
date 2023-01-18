@@ -1,191 +1,170 @@
-.visual {
-    position: relative;
-    width: 100%;
-    height: 120vh;
-}
+<!DOCTYPE>
+<html>
 
-.movie {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+<head>
+    <!-- <script type="text/javascript" src="jquery-3.6.3.min.js"></script> -->
+    <!-- <script type="text/javascript"></script> -->
+    <link rel="stylesheet" href="style.css">
 
-.movie video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-}
+    <title>Kinexis</title>
+    <style>
+        body {
+            background-color: #3e503e
+        }
+
+        
+
+        
+
+        .title {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            max-width: 200px;
+            padding: 10px 25px;
+        }
+
+        .text {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            max-width: 300px;
+            padding: 50px 25px 0px;
+        }
 
 
-/* ドットフィルター */
-.movie::after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 120vh;
-	background-color: rgba(0,0,0,0.2);
-	background-image: radial-gradient(#111 30%, transparent 31%), radial-gradient(#111 30%, transparent 31%);
-	background-size: 4px 4px;
-	background-position: 0 0, 2px 2px;
-}
+        .button001 button {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 200px;
+            padding: 10px 25px;
+            color: #313131;
+            transition: 0.3s ease-in-out;
+            font-weight: 600;
+        }
 
-/* ローディング */
-/*
-body {
-    background-color: #222;
-  }
-  
-  
-  #loading-wrapper {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-  
-  #loading-text {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #999;
-    width: 100px;
-    height: 30px;
-    margin: -7px 0 0 -45px;
-    text-align: center;
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-size: 20px;
-  }
-  
-  #loading-content {
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    width: 170px;
-    height: 170px;
-    margin: -85px 0 0 -85px;
-    border: 3px solid #F00;
-  }
-  
-  #loading-content:after {
-    content: "";
-    position: absolute;
-    border: 3px solid #0F0;
-    left: 15px;
-    right: 15px;
-    top: 15px;
-    bottom: 15px;
-  }
-  
-  #loading-content:before {
-    content: "";
-    position: absolute;
-    border: 3px solid #00F;
-    left: 5px;
-    right: 5px;
-    top: 5px;
-    bottom: 5px;
-  }
-  
-  #loading-content {
-    border: 3px solid transparent;
-    border-top-color: #4D658D;
-    border-bottom-color: #4D658D;
-    border-radius: 50%;
-    -webkit-animation: loader 2s linear infinite;
-    -moz-animation: loader 2s linear infinite;
-    -o-animation: loader 2s linear infinite;
-    animation: loader 2s linear infinite;
-  }
-  
-  #loading-content:before {
-    border: 3px solid transparent;
-    border-top-color: #D4CC6A;
-    border-bottom-color: #D4CC6A;
-    border-radius: 50%;
-    -webkit-animation: loader 3s linear infinite;
-      -moz-animation: loader 2s linear infinite;
-    -o-animation: loader 2s linear infinite;
-    animation: loader 3s linear infinite;
-  }
-  
-  #loading-content:after {
-    border: 3px solid transparent;
-    border-top-color: #84417C;
-    border-bottom-color: #84417C;
-    border-radius: 50%;
-    -webkit-animation: loader 1.5s linear infinite;
-    animation: loader 1.5s linear infinite;
-      -moz-animation: loader 2s linear infinite;
-    -o-animation: loader 2s linear infinite;
-  }
-  
-  @-webkit-keyframes loaders {
-    0% {
-      -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes loader {
-    0% {
-      -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  #content-wrapper {
-    color: #FFF;
-    position: fixed;
-    left: 0;
-    top: 20px;
-    width: 100%;
-    height: 100%;
-  }
-  
-  #header
-  {
-    width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    height: 100px;
-    background-color: #666;
-  }
-  
-  #content
-  {
-    width: 800px;
-    height: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #888;
-  }
+        .button001 button:before {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 0, 0, .1);
+            transform: translateX(-50%);
+        }
 
-  */
+        .button001 button:after {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scale(0, 1);
+            transform-origin: left top;
+            transition: transform .3s;
+        }
+
+        .button001 button:hover {
+            opacity: 0.7;
+        }
+
+        .button001 button:hover:after {
+            transform: scale(1, 1);
+        }
+
+        .gotop {
+            display: block;
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+            background: #FFF;
+            border: 1px solid #999;
+            padding-top: 30px;
+            text-align: center;
+            letter-spacing: -1px;
+            font-size: 85%;
+            text-decoration: none;
+            color: #333;
+            opacity: 0.5;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+        }
+
+        .gotop::before {
+            content: "";
+            display: block;
+            border-top: 2px solid #333;
+            border-right: 2px solid #333;
+            width: 25%;
+            height: 25%;
+            top: 25%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+
+        .gotop:hover {
+            opacity: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <a href="#" class="gotop">Top</a>
+
+</head>
+
+<body>
+
+
+
+    <div class="background">
+        <div class="title_background">
+            <div class="title">
+                <h1>Kinexis公式</h1>
+            </div>
+        </div>
+
+        <div class="visual">
+            <div class="movie">
+                <video src="main.mp4" autoplay muted loop playsinline type="video/mp4"></video>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="text">
+            <p> ↓↓↓ダウンロードはこちら↓↓↓ </p>
+        </div>
+
+        <div class="button001">
+            <button type=“button”
+                onclick="location.href='https://drive.google.com/uc?export=download&id=1HXDn5KbIHYv9CR4PkFqxeUmlbPZnHs9Q'">ダウンロード</button>
+        </div>
+    </div>
+
+    <div id="loading-wrapper">
+      <!--  <div id="loading-text">LOADING</div> -->
+        <div id="loading-content"></div>
+    </div>
+
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+</body>
+
+</html>
