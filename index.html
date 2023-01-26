@@ -1,20 +1,47 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 
 <head>
-    <!-- <script type="text/javascript" src="jquery-3.6.3.min.js"></script> -->
-    <!-- <script type="text/javascript"></script> -->
-    <link rel="stylesheet" href="style.css">
-
+    <meta charset="utf-8">
     <title>Kinexis</title>
+    <meta name="description" content="Kinexis">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--==============レイアウトを制御するCSSを読み込み===============-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <!--==============データ読み込み===============-->
+    <link rel="icon" href="fav.ico">
+
+    <script>
+        /*SNSアイコンscroll制御*/
+        window.addEventListener('scroll', function () {
+            var snsIcons = document.getElementById('sns-icons');
+            if (window.pageYOffset > 400) {
+                snsIcons.classList.add('active');
+            } else {
+                snsIcons.classList.remove('active');
+            }
+        });
+
+
+
+        setTimeout(function () {
+            const abc = document.getElementById("loading");
+            abc.classList.add('loaded');
+
+            document.getElementById("contents");
+        }, 1000);
+
+    </script>
+
     <style>
         body {
-            background-color: #3e503e
+            background-color: #000000
         }
-
-        
-
-        
 
         .title {
             position: relative;
@@ -124,47 +151,61 @@
         }
     </style>
     <a href="#" class="gotop">Top</a>
-
 </head>
 
 <body>
-
-
-
-    <div class="background">
-        <div class="title_background">
-            <div class="title">
-                <h1>Kinexis公式</h1>
-            </div>
-        </div>
-
-        <div class="visual">
-            <div class="movie">
-                <video src="main.mp4" autoplay muted loop playsinline type="video/mp4"></video>
-            </div>
-        </div>
-
-        </div>
-
-        <div class="text">
-            <p> ↓↓↓ダウンロードはこちら↓↓↓ </p>
-        </div>
-
-        <div class="button001">
-            <button type=“button”
-                onclick="location.href='https://drive.google.com/uc?export=download&id=1HXDn5KbIHYv9CR4PkFqxeUmlbPZnHs9Q'">ダウンロード</button>
-        </div>
-    </div>
-
-    <div id="loading-wrapper">
-      <!--  <div id="loading-text">LOADING</div> -->
-        <div id="loading-content"></div>
-    </div>
-
     <div id="loading">
-        <div class="loader"></div>
+        <div class="pixel-spinner">
+            <div class="pixel-spinner-inner"></div>
+        </div>
     </div>
 
+    <main id="contents">
+        <header id="header">
+            <!--<h1>Kinexis</h1>-->
+            <div id="video-area">
+                <video id="video" poster="title.png" webkit-playsinline playsinline muted autoplay loop>
+
+                    <source src="main.mp4" type="video/mp4">
+                    <p>動画を再生できる環境ではありません。</p>
+                </video>
+                <!--/video-area-->
+            </div>
+        </header>
+
+        <!-- S_SNSアイコン -->
+        <div id="sns-icons">
+            <div class="textbox">
+                <p class="SNS_Text">SNS</p>
+            </div>
+            <ul class="icon">
+                <li><a href="https://twitter.com/_Kinexis" class="icon-twitter">
+                        <i class="fab fa-twitter-square fa-3x" style="color: #0091ff;"></i>
+                    </a></li>
+                <li><a href="https://www.youtube.com/watch?v=yivACFXmkAQ" class="icon-youtube">
+                        <i class="fab fa-youtube-square fa-3x" style="color: #ff0000;"></i>
+                    </a></li>
+            </ul>
+        </div>
+        <!-- E_SNSアイコン -->
+
+        <div id="container">
+            <div class="background">
+
+
+
+                <div class="text">
+                    <p> ↓↓↓ダウンロードはこちら↓↓↓ </p>
+                </div>
+
+                <div class="button001">
+                    <button type=“button”
+                        onclick="location.href='https://drive.google.com/uc?export=download&id=1HXDn5KbIHYv9CR4PkFqxeUmlbPZnHs9Q'">ダウンロード</button>
+                </div>
+            </div>
+            <!--/container-->
+        </div>
+    </main>
 </body>
 
 </html>
